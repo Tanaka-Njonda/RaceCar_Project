@@ -97,6 +97,7 @@ def race(numOfCars):
             # Check if any car has completed all 20 laps
             if car["lapsFinished"] >= NUMBER_OF_LAPS: #if the current cars lap counter is >= 20
                 print(f"Car {car['raceCar_number']} wins the race!")
+                screen.bye()#closes the screen when a car reaches 20 laps
                 return  # End the game when a car wins
 
         # Increase each car's speed every 15 seconds
