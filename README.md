@@ -229,7 +229,7 @@ def placementAndMovementOfCars(n):
             car.forward(speeds[i])
             car.left(10) #creates the spiral effect
             
-            '''if car.xcor() == car.xcor():#checks if the the car has passed the starting postion
+            if car.xcor() == car.xcor():#checks if the the car has passed the starting postion
                 laps[i] += 1#if that is true the lap counter for the current car object is incremented
                 #car.goto(-450, 0)  # Reset car to starting position
                 #gets the current car objects racenumber and how many laps it has completed
@@ -245,7 +245,7 @@ def placementAndMovementOfCars(n):
                 print(f"Car {raceCar_numbers[i]} wins the race after 20 laps!")
                 window.bye()  # Closes the screen when the race ends.
                 return
-        window.update()'''
+        window.update()
     return
     
 
