@@ -84,6 +84,58 @@ def increaseSpeed(cars):
         car["speed"] += random.randint(1,5) #increases the initial speed of each car by one
     print("Increasing speed for all cars.")
 
+#to create the starting light
+def DrawARectangle():
+    for i in range(2):
+        turtle.forward(50)
+        turtle.right(90)
+        turtle.forward(100)
+        turtle.right(90)
+    return
+#to create the starting light
+def DrawDifferentLights():
+    x = 70
+    for i in range(5):
+        turtle.color("black")
+        turtle.begin_fill()
+        turtle.penup()
+        turtle.ht()
+        turtle.goto(x,350)
+        turtle.pendown()
+        DrawARectangle()
+        turtle.end_fill()
+        x -= 60
+    return
+#to create the starting light
+def DrawACircle():
+    turtle.circle(17,360)
+    return
+
+#Function for the starting lights
+def startingLights():
+    x1 = -145
+    for i in range(5):
+        turtle.penup()
+        turtle.ht()
+        turtle.goto(x1,255)
+        turtle.color("red")
+        turtle.begin_fill()
+        turtle.pendown()
+        DrawACircle()
+        turtle.end_fill()
+        x1 += 60
+    x2 = -145
+    for j in range(5):
+        turtle.penup()
+        turtle.ht()
+        turtle.goto(x2,300)
+        turtle.color("green")
+        turtle.begin_fill()
+        turtle.pendown()
+        DrawACircle()
+        turtle.end_fill()
+        x2 += 60
+
 # Main function to run the race
 def race(numOfCars):
     cars = createCars(numOfCars) #initializes the cars
@@ -104,8 +156,10 @@ def race(numOfCars):
             increaseSpeed(cars)
             start_time = time.time() #resets time to initial
 
-# Get user input and start the race 
+# initialize the starting lights, take user input and start the race
 numOfCars = int(input("Enter the number of cars in the race: "))
+DrawDifferentLights()
+startingLights()
 race(numOfCars)  # Start the race with the provided number of cars
 
 screen.mainloop() #s essential for maintaining the graphics window's open state and responsiveness
